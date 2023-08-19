@@ -11,19 +11,19 @@ FROM openjdk:18 AS build
 WORKDIR /app
 
 # Copy the Gradle executable to the image
-COPY nvmw ./
+COPY mvnw ./
 
 # Copy the 'gradle' folder to the image
-COPY nvm ./nvm
+COPY mvn ./mvn
 
 # Give permission to execute the gradle script
-RUN chmod +x ./nvmw
+RUN chmod +x ./mvnw
 
 # Copy the rest of the application source code
 COPY . .
 
 # Use Gradle to build the application
-RUN sh ./nvmw build
+RUN sh ./mvnw build
 
 # Set up a second stage, which will only keep the compiled application and not the build tools and source code
 FROM openjdk:18
