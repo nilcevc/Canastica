@@ -11,10 +11,10 @@ FROM openjdk:18 AS build
 WORKDIR /app
 
 # Copy the Gradle executable to the image
-COPY mvnw ./
+COPY mvnw pom.xml ./
 
 # Copy the 'gradle' folder to the image
-COPY mvn ./mvn
+COPY .mvn/ ./mvn
 
 # Give permission to execute the gradle script
 RUN chmod +x ./mvnw
