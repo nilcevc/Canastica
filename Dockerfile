@@ -23,7 +23,7 @@ RUN chmod +x ./mvnw
 COPY . .
 
 # Use Gradle to build the application
-RUN sh ./mvnw build
+RUN ./mvnw dependency:go-offline
 
 # Set up a second stage, which will only keep the compiled application and not the build tools and source code
 FROM openjdk:18
