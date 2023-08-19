@@ -63,7 +63,7 @@ public class ControladorProducto {
         return ResponseEntity.ok(repoProducto.save(producto));
     }
 
-    @DeleteMapping
+    @DeleteMapping({"codigo"})
     public ResponseEntity<?> borrarProducto(@PathVariable Long codigo){
         repoProducto.deleteById(codigo);
         return ResponseEntity.ok().build();
