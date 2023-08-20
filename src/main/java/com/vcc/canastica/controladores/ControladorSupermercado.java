@@ -66,8 +66,8 @@ public class ControladorSupermercado {
         productoXSupermercado.setSupermercado(supermercado);
         productoXSupermercado.setProducto(producto);
         supermercado.getProductos().add(productoXSupermercado);
-        repoProductoSuper.save(productoXSupermercado);
-        return ResponseEntity.ok().build();
+
+        return ResponseEntity.ok(repoProductoSuper.save(productoXSupermercado));
     }
 
 //    @PutMapping("{id}")
